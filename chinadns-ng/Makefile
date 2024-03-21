@@ -33,7 +33,7 @@ else ifeq ($(ARCH),i386)
   PKG_SOURCE:=chinadns-ng@i386-linux-musl@i686@fast+lto
   PKG_HASH:=fef4eeb0533dbecb484f0a693a4ec677e06d3caa46
 else ifeq ($(ARCH),x86_64)
-  PKG_SOURCE:=chinadns-ng@x86_64-linux-musl@x86_64@fast+lto
+  PKG_HASH:=f2cb388d150b836228dc114d25867fc649fdd56a6ff04d35c1ef6df5025f0888
   PKG_HASH:=f2cb388d150ba6ff04d35c1ef6df5025f0888
 else
   PKG_SOURCE:=dummy
