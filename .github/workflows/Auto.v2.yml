@@ -24,9 +24,17 @@ jobs:
       - name: Initialization environment
         run: |
           sudo timedatectl set-timezone "$TZ"
+
+      - name: Delete workflow runs
+        uses: Mattraks/delete-workflow-runs@main
+        with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          retain_days: 1
+          keep_minimum_runs: 0
         
       - name: SSH connection to Actions
-        uses: mxschmitt/action-tmate@master
+        uses: kenzok78/ssh-action@master
         if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
 
   job_auto_update_packages:
