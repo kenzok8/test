@@ -19,17 +19,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@main
-
+        with:
+          ref: 'main'
 
       - name: Initialization environment
         run: |
           sudo timedatectl set-timezone "$TZ"
+
+      - name: Delete workflow runs
+        uses: Mattraks/delete-workflow-runs@main
+        with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          retain_days: 1
+          keep_minimum_runs: 0
         
       - name: SSH connection to Actions
         uses: mxschmitt/action-tmate@master
         if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
 
-  job_auto_update_packages:
+  job_auto_update_main:
     if: ${{ always() }}
     needs: job_init
     runs-on: ubuntu-latest
@@ -222,6 +231,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@main
+        with:
+          ref: 'main'
 
 
       - name: Initialization environment
