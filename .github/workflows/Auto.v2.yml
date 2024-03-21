@@ -24,12 +24,6 @@ jobs:
       - name: Initialization environment
         run: |
           sudo timedatectl set-timezone "$TZ"
-
-      - name: Delete workflow runs
-        uses: Mattraks/delete-workflow-runs@main
-        with:
-          retain_days: 1
-          keep_minimum_runs: 0
         
       - name: SSH connection to Actions
         uses: mxschmitt/action-tmate@master
@@ -232,7 +226,7 @@ jobs:
 
       - name: Initialization environment
         run: |
-          cd && mkdir -p main && cd main
+          cd && mkdir -p pack && cd pack
           sudo timedatectl set-timezone "$TZ"
 
       - name: Check ${{ matrix.pakcages }}
@@ -273,7 +267,7 @@ jobs:
           else
             sed -i "${{ matrix.version_line }}c ${{ matrix.version_head }}$New_PKG_VERSION" Makefile;
           fi
-          cd && cd main && mkdir -p ${{ matrix.pakcages }} && cd ${{ matrix.pakcages }}
+          cd && cd pack && mkdir -p ${{ matrix.pakcages }} && cd ${{ matrix.pakcages }}
           wget -P / ${{ matrix.release_download_url }}$New_PKG_VERSION${{ matrix.file_name }}
           file_name=${{ matrix.file_name }}
 
@@ -288,7 +282,7 @@ jobs:
           fi
           echo "已更新${{ matrix.pakcages }}版本到: $New_PKG_VERSION"
           echo "${{ matrix.pakcages }} Hash:$PKG_HASH"
-          cd && cd main
+          cd && cd pack
           echo ":white_check_mark: ${{ matrix.pakcages }}: update to $New_PKG_VERSION" >> commit_messages.txt
           echo "version=$New_PKG_VERSION" >> $GITHUB_OUTPUT
 
@@ -314,3 +308,9 @@ jobs:
           labels: |
             automated-pr
           draft: false
+
+      - name: Delete workflow runs
+        uses: Mattraks/delete-workflow-runs@main
+        with:
+          retain_days: 1
+          keep_minimum_runs: 0
