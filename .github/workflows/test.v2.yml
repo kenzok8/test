@@ -1,4 +1,4 @@
-name: "chinadns-ng update"
+name: "test.v2"
 on:
   repository_dispatch:
   workflow_dispatch:
