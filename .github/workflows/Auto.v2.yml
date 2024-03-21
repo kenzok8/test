@@ -45,14 +45,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pakcages: [brook, chinadns-ng, hysteria, ipt2socks, microsocks, shadowsocks-rust, sing-box, trojan, trojan-go, v2raya,v2ray-core, v2ray-plugin, xray-core, xray-plugin, v2ray-geoip, v2ray-geosite]
+        pakcages: [brook, chinadns-ng, hysteria, ipt2socks, microsocks, shadowsocks-rust, sing-box, trojan, trojan-go, v2raya, v2ray-core, v2ray-plugin, xray-core, xray-plugin, v2ray-geoip, v2ray-geosite]
         include:
           - pakcages: brook
             folder: brook
             version_head: PKG_VERSION:=
             hash_head: PKG_HASH:=
             version_line:
-            hash_line:
+            hash_line: 
             release_api_command: curl -sL "https://api.github.com/repos/txthinking/brook/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://codeload.github.com/txthinking/brook/tar.gz/v
             file_name:
@@ -62,7 +62,7 @@ jobs:
             version_head: PKG_VERSION:=
             hash_head: PKG_HASH:=
             version_line:
-            hash_line:
+            hash_line: 
             release_api_command: curl -sL "https://api.github.com/repos/zfl9/chinadns-ng/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://codeload.github.com/zfl9/chinadns-ng/tar.gz/
             file_name:
@@ -72,7 +72,7 @@ jobs:
             version_head: PKG_VERSION:=
             hash_head: PKG_HASH:=
             version_line:
-            hash_line:
+            hash_line: 
             release_api_command: curl -sL "https://api.github.com/repos/apernet/hysteria/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://codeload.github.com/apernet/hysteria/tar.gz/app/v
             file_name:
@@ -82,7 +82,7 @@ jobs:
             version_head: PKG_VERSION:=
             hash_head: PKG_HASH:=
             version_line:
-            hash_line:
+            hash_line: 
             release_api_command: curl -sL "https://api.github.com/repos/zfl9/ipt2socks/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://codeload.github.com/zfl9/ipt2socks/tar.gz/v
             file_name:
@@ -95,6 +95,16 @@ jobs:
             hash_line:
             release_api_command: curl -sL "https://api.github.com/repos/rofl0r/microsocks/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://codeload.github.com/rofl0r/microsocks/tar.gz/v
+            file_name:
+
+          - pakcages: redsocks2
+            folder: redsocks2
+            version_head: PKG_VERSION:=
+            hash_head: PKG_MIRROR_HASH:=
+            version_line: 
+            hash_line: 
+            release_api_command: curl -sL "https://api.github.com/repos/semigodking/redsocks/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://codeload.github.com/semigodking/redsocks/tar.gz/
             file_name:
 
           - pakcages: shadowsocks-rust
