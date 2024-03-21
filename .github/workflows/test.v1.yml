@@ -45,13 +45,11 @@ jobs:
       fail-fast: false
       matrix:
         pakcages: [shadowsocks-rust]
-        steps:
-          - name: Get PKG_VERSION
-            id: get_version
-            run: |
-              PKG_VERSION=$(curl -sL "https://api.github.com/repos/shadowsocks/shadowsocks-rust/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//')
-              echo "version=$PKG_VERSION" >>$GITHUB_OUTPUT
         include:
+          - pakcages: shadowsocks-rust
+            folder: shadowsocks-rust
+            version_head: PKG_VERSION=$(curl -sL "https://api.github.com/repos/shadowsocks/shadowsocks-rust/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//')
+
           - pakcages: shadowsocks-v$(PKG_VERSION).aarch64-unknown-linux-musl
             folder: shadowsocks-rust
             version_head: PKG_VERSION:=
