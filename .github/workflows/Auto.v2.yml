@@ -8,7 +8,7 @@ on:
         required: false
         default: 'false'
   schedule:
-    - cron: "0 */4 * * *"
+    - cron: "0 */12 * * *"
 env:
   TZ: Asia/Shanghai
 
@@ -241,7 +241,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
 
-
       - name: Initialization environment
         run: |
           cd && mkdir -p pack && cd pack
@@ -272,7 +271,6 @@ jobs:
           else
             echo "status=failure" >> $GITHUB_OUTPUT;
           fi
-
 
       - name: Update ${{ matrix.pakcages }}
         id: update
