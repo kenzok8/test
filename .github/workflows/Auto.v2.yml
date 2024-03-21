@@ -35,7 +35,7 @@ jobs:
           keep_minimum_runs: 0
         
       - name: SSH connection to Actions
-        uses: mxschmitt/action-tmate@v3.13
+        uses: mxschmitt/action-tmate@master
         if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
 
   job_auto_update_packages:
@@ -301,7 +301,7 @@ jobs:
       - name: Create Pull Request
         id: cpr
         if: steps.check.outputs.status == 'success' && steps.check.outputs.New_PKG_VERSION != '' && steps.update.outputs.branch_exists == '' && !cancelled()
-        uses: peter-evans/create-pull-request@v5.0.2
+        uses: peter-evans/create-pull-request@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "${{ matrix.pakcages }}: update to ${{ steps.update.outputs.version }}"
