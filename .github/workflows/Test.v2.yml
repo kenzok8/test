@@ -45,7 +45,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pakcages: [chinadns-ng@aarch64-linux-musl@generic+v8a@fast+lto, chinadns-ng@arm-linux-musleabi@generic+v7a@fast+lto, chinadns-ng@arm-linux-musleabihf@generic+v7a@fast+lto, chinadns-ng@mips-linux-musl@mips32@fast+lto, chinadns-ng@mipsel-linux-musl@mips32@fast+lto, chinadns-ng@i386-linux-musl@i686@fast+lto, chinadns-ng@x86_64-linux-musl@x86_64@fast+lto]
+        pakcages: [chinadns-ng@aarch64-linux-musl@generic+v8a@fast+lto, chinadns-ng@arm-linux-musleabi@generic+v7a@fast+lto, chinadns-ng@arm-linux-musleabihf@generic+v7a@fast+lto, chinadns-ng@mips-linux-musl@mips32+soft_float@fast+lto, chinadns-ng@mipsel-linux-musl@mips32+soft_float@fast+lto, chinadns-ng@i386-linux-musl@i686@fast+lto, chinadns-ng@x86_64-linux-musl@x86_64@fast+lto]
         include:
           - pakcages: chinadns-ng@aarch64-linux-musl@generic+v8a@fast+lto
             folder: chinadns-ng
@@ -77,7 +77,7 @@ jobs:
             release_download_url: https://github.com/zfl9/chinadns-ng/releases/download/
             file_name: /chinadns-ng@arm-linux-musleabihf@generic+v7a@fast+lto
 
-          - pakcages: chinadns-ng@mips-linux-musl@mips32@fast+lto
+          - pakcages: chinadns-ng@mips-linux-musl@mips32+soft_float@fast+lto
             folder: chinadns-ng
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -85,9 +85,9 @@ jobs:
             hash_line: 28
             release_api_command: curl -sL "https://api.github.com/repos/zfl9/chinadns-ng/releases" | | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://github.com/zfl9/chinadns-ng/releases/download/
-            file_name: /chinadns-ng@mips-linux-musl@mips32@fast+lto
+            file_name: /chinadns-ng@mips-linux-musl@mips32+soft_float@fast+lto
 
-          - pakcages: chinadns-ng@mipsel-linux-musl@mips32@fast+lto
+          - pakcages: chinadns-ng@mipsel-linux-musl@mips32+soft_float@fast+lto
             folder: chinadns-ng
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -95,7 +95,7 @@ jobs:
             hash_line: 31
             release_api_command: curl -sL "https://api.github.com/repos/zfl9/chinadns-ng/releases" | | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://github.com/zfl9/chinadns-ng/releases/download/
-            file_name: /chinadns-ng@mipsel-linux-musl@mips32@fast+lto
+            file_name: /chinadns-ng@mipsel-linux-musl@mips32+soft_float@fast+lto
 
           - pakcages: chinadns-ng@i386-linux-musl@i686@fast+lto
             folder: chinadns-ng
