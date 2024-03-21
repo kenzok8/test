@@ -25,7 +25,7 @@ else ifeq ($(ARCH),arm)
   endif
 else ifeq ($(ARCH),mips)
   PKG_SOURCE:=chinadns-ng@mips-linux-musl@mips32+soft_float@fast+lto
-  PKG_HASH:=0b36f20641eef9430a71203a0a2b28f7557236d4cab546643
+  PKG_HASH:=0b36f20641eef9430a71203a0a2b28f875cea2b13d1a537557236d4cab546643
 else ifeq ($(ARCH),mipsel)
   PKG_SOURCE:=chinadns-ng@mipsel-linux-musl@mips32+soft_float@fast+lto
   PKG_HASH:=eef2bc033bd87ec00af96bb212f51af0e9b3097fb22665dc67
