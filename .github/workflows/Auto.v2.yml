@@ -312,8 +312,8 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "${{ matrix.pakcages }}: update to ${{ steps.update.outputs.version }}"
-          committer: kenzok8 <kenzok8@gmail.com>
-          author: kenzok8 <kenzok8@gmail.com>
+          committer: action <actions@github.com>
+          author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
           signoff: false
           branch: patches-${{ matrix.pakcages }}-${{ steps.update.outputs.version }}
           base: main
