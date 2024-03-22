@@ -160,7 +160,7 @@ jobs:
           - pakcages: smartdns
             folder: smartdns
             version_head: PKG_VERSION:=
-            hash_head: PKG_MIRROR_HASH:=
+            hash_head: PKG_HASH:=
             version_line: 
             hash_line: 
             release_api_command: curl -sL "https://api.github.com/repos/pymumu/smartdns/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*Release//'
@@ -179,8 +179,8 @@ jobs:
 
           - pakcages: UnblockNeteaseMusic
             folder: UnblockNeteaseMusic
-            version_head: PKG_BASE_VERSION:=
-            hash_head: PKG_MIRROR_HASH:=
+            version_head: PKG_VERSION:=
+            hash_head: PKG_HASH:=
             version_line: 
             hash_line: 
             release_api_command: curl -sL "https://api.github.com/repos/UnblockNeteaseMusic/server/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
