@@ -53,7 +53,7 @@ jobs:
             version_line: 
             hash_line: 16
             release_api_command: curl -sL "https://api.github.com/repos/ihciah/shadow-tls/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
-            release_download_url: https://github.com/ihciah/shadow-tls/releases/download/
+            release_download_url: https://github.com/ihciah/shadow-tls/releases/download/v
             file_name: /shadow-tls-aarch64-unknown-linux-musl
 
           - pakcages: shadow-tls-armv7-unknown-linux-musleabihf
@@ -63,7 +63,7 @@ jobs:
             version_line: 
             hash_line: 20
             release_api_command: curl -sL "https://api.github.com/repos/ihciah/shadow-tls/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
-            release_download_url: https://github.com/ihciah/shadow-tls/releases/download/
+            release_download_url: https://github.com/ihciah/shadow-tls/releases/download/v
             file_name: /shadow-tls-armv7-unknown-linux-musleabihf
 
           - pakcages: shadow-tls-armv7-unknown-linux-musleabihf
@@ -73,7 +73,7 @@ jobs:
             version_line: 
             hash_line: 23
             release_api_command: curl -sL "https://api.github.com/repos/ihciah/shadow-tls/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
-            release_download_url: https://github.com/ihciah/shadow-tls/releases/download/
+            release_download_url: https://github.com/ihciah/shadow-tls/releases/download/v
             file_name: /shadow-tls-armv7-unknown-linux-musleabihf
 
           - pakcages: shadow-tls-arm-unknown-linux-musleabi
@@ -83,7 +83,7 @@ jobs:
             version_line: 
             hash_line: 26
             release_api_command: curl -sL "https://api.github.com/repos/ihciah/shadow-tls/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
-            release_download_url: https://github.com/ihciah/shadow-tls/releases/download/
+            release_download_url: https://github.com/ihciah/shadow-tls/releases/download/v
             file_name: /shadow-tls-arm-unknown-linux-musleabi
 
           - pakcages: shadow-tls-x86_64-unknown-linux-musl
@@ -93,7 +93,7 @@ jobs:
             version_line: 
             hash_line: 31
             release_api_command: curl -sL "https://api.github.com/repos/ihciah/shadow-tls/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
-            release_download_url: https://github.com/ihciah/shadow-tls/releases/download/
+            release_download_url: https://github.com/ihciah/shadow-tls/releases/download/v
             file_name: /shadow-tls-x86_64-unknown-linux-musl
 
           - pakcages: chinadns-ng@i386-linux-musl@i686@fast+lto
@@ -103,7 +103,7 @@ jobs:
             version_line: 
             hash_line: 34
             release_api_command: curl -sL "https://api.github.com/repos/ihciah/shadow-tls/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
-            release_download_url: https://github.com/ihciah/shadow-tls/releases/download/
+            release_download_url: https://github.com/ihciah/shadow-tls/releases/download/v
             file_name: /chinadns-ng@i386-linux-musl@i686@fast+lto
 
           - pakcages: chinadns-ng@x86_64-linux-musl@x86_64@fast+lto
@@ -113,7 +113,7 @@ jobs:
             version_line: 
             hash_line: 37
             release_api_command: curl -sL "https://api.github.com/repos/ihciah/shadow-tls/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
-            release_download_url: https://github.com/ihciah/shadow-tls/releases/download/
+            release_download_url: https://github.com/ihciah/shadow-tls/releases/download/v
             file_name: /chinadns-ng@x86_64-linux-musl@x86_64@fast+lto           
 
     steps:
