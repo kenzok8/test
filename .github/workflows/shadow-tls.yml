@@ -1,4 +1,4 @@
-name: "chinadns-ng"
+name: "shadow-tls"
 on:
   repository_dispatch:
   workflow_dispatch:
@@ -45,57 +45,57 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pakcages: [chinadns-ng@aarch64-linux-musl@generic+v8a@fast+lto, chinadns-ng@arm-linux-musleabi@generic+v7a@fast+lto, chinadns-ng@arm-linux-musleabihf@generic+v7a@fast+lto, chinadns-ng@mips-linux-musl@mips32+soft_float@fast+lto, chinadns-ng@mipsel-linux-musl@mips32+soft_float@fast+lto, chinadns-ng@i386-linux-musl@i686@fast+lto, chinadns-ng@x86_64-linux-musl@x86_64@fast+lto]
+        pakcages: [shadow-tls-aarch64-unknown-linux-musl, shadow-tls-armv7-unknown-linux-musleabihf, shadow-tls-arm-unknown-linux-musleabi, shadow-tls-x86_64-unknown-linux-musl, chinadns-ng@i386-linux-musl@i686@fast+lto, chinadns-ng@x86_64-linux-musl@x86_64@fast+lto]
         include:
-          - pakcages: chinadns-ng@aarch64-linux-musl@generic+v8a@fast+lto
+          - pakcages: shadow-tls-aarch64-unknown-linux-musl
             folder: chinadns-ng
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
             version_line: 
             hash_line: 16
-            release_api_command: curl -sL "https://api.github.com/repos/zfl9/chinadns-ng/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
-            release_download_url: https://github.com/zfl9/chinadns-ng/releases/download/
-            file_name: /chinadns-ng@aarch64-linux-musl@generic+v8a@fast+lto
+            release_api_command: curl -sL "https://api.github.com/repos/ihciah/shadow-tls/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/ihciah/shadow-tls/releases/download/
+            file_name: /shadow-tls-aarch64-unknown-linux-musl
 
-          - pakcages: chinadns-ng@arm-linux-musleabi@generic+v7a@fast+lto
+          - pakcages: shadow-tls-armv7-unknown-linux-musleabihf
             folder: chinadns-ng
             version_head: PKG_VERSION:=
             hash_head: \    PKG_HASH:=
             version_line: 
-            hash_line: 21
-            release_api_command: curl -sL "https://api.github.com/repos/zfl9/chinadns-ng/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
-            release_download_url: https://github.com/zfl9/chinadns-ng/releases/download/
-            file_name: /chinadns-ng@arm-linux-musleabi@generic+v7a@fast+lto
+            hash_line: 20
+            release_api_command: curl -sL "https://api.github.com/repos/ihciah/shadow-tls/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/ihciah/shadow-tls/releases/download/
+            file_name: /shadow-tls-armv7-unknown-linux-musleabihf
 
-          - pakcages: chinadns-ng@arm-linux-musleabihf@generic+v7a@fast+lto
+          - pakcages: shadow-tls-armv7-unknown-linux-musleabihf
             folder: chinadns-ng
             version_head: PKG_VERSION:=
             hash_head: \    PKG_HASH:=
             version_line: 
-            hash_line: 24
-            release_api_command: curl -sL "https://api.github.com/repos/zfl9/chinadns-ng/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
-            release_download_url: https://github.com/zfl9/chinadns-ng/releases/download/
-            file_name: /chinadns-ng@arm-linux-musleabihf@generic+v7a@fast+lto
+            hash_line: 23
+            release_api_command: curl -sL "https://api.github.com/repos/ihciah/shadow-tls/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/ihciah/shadow-tls/releases/download/
+            file_name: /shadow-tls-armv7-unknown-linux-musleabihf
 
-          - pakcages: chinadns-ng@mips-linux-musl@mips32+soft_float@fast+lto
+          - pakcages: shadow-tls-arm-unknown-linux-musleabi
             folder: chinadns-ng
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
             version_line: 
-            hash_line: 28
-            release_api_command: curl -sL "https://api.github.com/repos/zfl9/chinadns-ng/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
-            release_download_url: https://github.com/zfl9/chinadns-ng/releases/download/
-            file_name: /chinadns-ng@mips-linux-musl@mips32+soft_float@fast+lto
+            hash_line: 26
+            release_api_command: curl -sL "https://api.github.com/repos/ihciah/shadow-tls/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/ihciah/shadow-tls/releases/download/
+            file_name: /shadow-tls-arm-unknown-linux-musleabi
 
-          - pakcages: chinadns-ng@mipsel-linux-musl@mips32+soft_float@fast+lto
+          - pakcages: shadow-tls-x86_64-unknown-linux-musl
             folder: chinadns-ng
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
             version_line: 
             hash_line: 31
-            release_api_command: curl -sL "https://api.github.com/repos/zfl9/chinadns-ng/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
-            release_download_url: https://github.com/zfl9/chinadns-ng/releases/download/
-            file_name: /chinadns-ng@mipsel-linux-musl@mips32+soft_float@fast+lto
+            release_api_command: curl -sL "https://api.github.com/repos/ihciah/shadow-tls/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/ihciah/shadow-tls/releases/download/
+            file_name: /shadow-tls-x86_64-unknown-linux-musl
 
           - pakcages: chinadns-ng@i386-linux-musl@i686@fast+lto
             folder: chinadns-ng
@@ -103,8 +103,8 @@ jobs:
             hash_head: \  PKG_HASH:=
             version_line: 
             hash_line: 34
-            release_api_command: curl -sL "https://api.github.com/repos/zfl9/chinadns-ng/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
-            release_download_url: https://github.com/zfl9/chinadns-ng/releases/download/
+            release_api_command: curl -sL "https://api.github.com/repos/ihciah/shadow-tls/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/ihciah/shadow-tls/releases/download/
             file_name: /chinadns-ng@i386-linux-musl@i686@fast+lto
 
           - pakcages: chinadns-ng@x86_64-linux-musl@x86_64@fast+lto
@@ -113,9 +113,9 @@ jobs:
             hash_head: \  PKG_HASH:=
             version_line: 
             hash_line: 37
-            release_api_command: curl -sL "https://api.github.com/repos/zfl9/chinadns-ng/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
-            release_download_url: https://github.com/zfl9/chinadns-ng/releases/download/
-            file_name: /chinadns-ng@x86_64-linux-musl@x86_64@fast+lto
+            release_api_command: curl -sL "https://api.github.com/repos/ihciah/shadow-tls/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/ihciah/shadow-tls/releases/download/
+            file_name: /chinadns-ng@x86_64-linux-musl@x86_64@fast+lto           
 
     steps:
       - name: Checkout
@@ -140,11 +140,11 @@ jobs:
               Old_PKG_VERSION=$(sed -n '${{ matrix.version_line }}p' Makefile | awk -F '=' '{print $2}');
             fi
             New_PKG_VERSION=$(${{ matrix.release_api_command }})
-            echo "${{ matrix.pakcages }}ç›®å‰ç‰ˆæœ¬: $Old_PKG_VERSION"
-            echo "${{ matrix.pakcages }}æœ€æ–°ç‰ˆæœ¬: $New_PKG_VERSION"
+            echo "${{ matrix.pakcages }}Ä¿Ç°°æ±¾: $Old_PKG_VERSION"
+            echo "${{ matrix.pakcages }}×îÐÂ°æ±¾: $New_PKG_VERSION"
             if [ "$Old_PKG_VERSION" = "$New_PKG_VERSION" ]; then 
               echo "status=failure" >> $GITHUB_OUTPUT; 
-              echo "${{ matrix.pakcages }}ç‰ˆæœ¬ä¸ºæœ€æ–°ç‰ˆæœ¬$New_PKG_VERSION,æ— éœ€æ›´æ–°"; 
+              echo "${{ matrix.pakcages }}°æ±¾Îª×îÐÂ°æ±¾$New_PKG_VERSION,ÎÞÐè¸üÐÂ"; 
             else 
               echo "New_PKG_VERSION=$New_PKG_VERSION" >> $GITHUB_OUTPUT;  
               echo "status=success" >> $GITHUB_OUTPUT;
@@ -177,7 +177,7 @@ jobs:
           else
             sed -i "${{ matrix.hash_line }}c ${{ matrix.hash_head }}$PKG_HASH" Makefile;
           fi
-          echo "å·²æ›´æ–°${{ matrix.pakcages }}ç‰ˆæœ¬åˆ°: $New_PKG_VERSION"
+          echo "ÒÑ¸üÐÂ${{ matrix.pakcages }}°æ±¾µ½: $New_PKG_VERSION"
           echo "${{ matrix.pakcages }} Hash:$PKG_HASH"
           cd && cd pack
           echo ":white_check_mark: ${{ matrix.pakcages }}: update to $New_PKG_VERSION" >> commit_messages.txt
@@ -205,3 +205,8 @@ jobs:
           labels: |
             automated-pr
           draft: false
+
+
+
+
+
