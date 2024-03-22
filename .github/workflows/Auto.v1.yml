@@ -223,7 +223,6 @@ jobs:
             echo "status=failure" >> $GITHUB_OUTPUT;
           fi
 
-
       - name: Update ${{ matrix.pakcages }}
         id: update
         if: steps.check.outputs.status == 'success' && steps.check.outputs.New_PKG_VERSION != '' && !cancelled()
