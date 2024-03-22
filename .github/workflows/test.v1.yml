@@ -52,77 +52,77 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pakcages: [shadowsocks-v${{ env.PKG_VERSION }}.aarch64-unknown-linux-musl , shadowsocks-v${{ env.PKG_VERSION }}.arm-unknown-linux-musleabi.linux-musl, shadowsocks-v${{ env.PKG_VERSION }}.arm-unknown-linux-musleabihf, shadowsocks-v${{ env.PKG_VERSION }}.i686-unknown-linux-musl, shadowsocks-v${{ env.PKG_VERSION }}.x86_64-unknown-linux-musl, shadowsocks-v${{ env.PKG_VERSION }}.mips-unknown-linux-musl, shadowsocks-v${{ env.PKG_VERSION }}.mipsel-unknown-linux-musl]
+        pakcages: [shadowsocks-v$(PKG_VERSION).aarch64-unknown-linux-musl , shadowsocks-v$(PKG_VERSION).arm-unknown-linux-musleabi.linux-musl, shadowsocks-v$(PKG_VERSION).arm-unknown-linux-musleabihf, shadowsocks-v$(PKG_VERSION).i686-unknown-linux-musl, shadowsocks-v$(PKG_VERSION).x86_64-unknown-linux-musl, shadowsocks-v$(PKG_VERSION).mips-unknown-linux-musl, shadowsocks-v$(PKG_VERSION).mipsel-unknown-linux-musl]
         include:
-          - pakcages: shadowsocks-v${{ env.PKG_VERSION }}.aarch64-unknown-linux-musl
+          - pakcages: shadowsocks-v$(PKG_VERSION).aarch64-unknown-linux-musl
             folder: shadowsocks-rust
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
             version_line:
             hash_line: 24
             release_api_command: curl -sL "https://api.github.com/repos/shadowsocks/shadowsocks-rust/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
-            release_download_url: https://github.com/shadowsocks/shadowsocks-rust/releases/download/v${{ env.PKG_VERSION }}/
-            file_name: /shadowsocks-v${{ env.PKG_VERSION }}.aarch64-unknown-linux-musl.tar.xz
+            release_download_url: https://github.com/shadowsocks/shadowsocks-rust/releases/download/v$(PKG_VERSION)/
+            file_name: /shadowsocks-v$(PKG_VERSION).aarch64-unknown-linux-musl.tar.xz
             
-          - pakcages: shadowsocks-v${{ env.PKG_VERSION }}.arm-unknown-linux-musleabi.linux-musl
+          - pakcages: shadowsocks-v$(PKG_VERSION).arm-unknown-linux-musleabi.linux-musl
             folder: shadowsocks-rust
             version_head: PKG_VERSION:=
             hash_head: \    PKG_HASH:=
             version_line:
             hash_line: 30
             release_api_command: curl -sL "https://api.github.com/repos/shadowsocks/shadowsocks-rust/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
-            release_download_url: https://github.com/shadowsocks/shadowsocks-rust/releases/download/v${{ env.PKG_VERSION }}/
-            file_name: /shadowsocks-v${{ env.PKG_VERSION }}.arm-unknown-linux-musleabi.linux-musl.tar.xz
+            release_download_url: https://github.com/shadowsocks/shadowsocks-rust/releases/download/v$(PKG_VERSION)/
+            file_name: /shadowsocks-v$(PKG_VERSION).arm-unknown-linux-musleabi.linux-musl.tar.xz
 
-          - pakcages: shadowsocks-v${{ env.PKG_VERSION }}.arm-unknown-linux-musleabihf
+          - pakcages: shadowsocks-v$(PKG_VERSION).arm-unknown-linux-musleabihf
             folder: shadowsocks-rust
             version_head: PKG_VERSION:=
             hash_head: \    PKG_HASH:=
             version_line:
             hash_line: 33
             release_api_command: curl -sL "https://api.github.com/repos/shadowsocks/shadowsocks-rust/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
-            release_download_url: https://github.com/shadowsocks/shadowsocks-rust/releases/download/v${{ env.PKG_VERSION }}/
-            file_name: /shadowsocks-v${{ env.PKG_VERSION }}.arm-unknown-linux-musleabihf.tar.xz
+            release_download_url: https://github.com/shadowsocks/shadowsocks-rust/releases/download/v$(PKG_VERSION)/
+            file_name: /shadowsocks-v$(PKG_VERSION).arm-unknown-linux-musleabihf.tar.xz
             
-          - pakcages: shadowsocks-v${{ env.PKG_VERSION }}.i686-unknown-linux-musl
+          - pakcages: shadowsocks-v$(PKG_VERSION).i686-unknown-linux-musl
             folder: shadowsocks-rust
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
             version_line:
             hash_line: 37
             release_api_command: curl -sL "https://api.github.com/repos/shadowsocks/shadowsocks-rust/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
-            release_download_url: https://github.com/shadowsocks/shadowsocks-rust/releases/download/v${{ env.PKG_VERSION }}/
-            file_name: /shadowsocks-v${{ env.PKG_VERSION }}.i686-unknown-linux-musl.tar.xz        
+            release_download_url: https://github.com/shadowsocks/shadowsocks-rust/releases/download/v$(PKG_VERSION)/
+            file_name: /shadowsocks-v$(PKG_VERSION).i686-unknown-linux-musl.tar.xz        
 
-          - pakcages: shadowsocks-v${{ env.PKG_VERSION }}.x86_64-unknown-linux-musl
+          - pakcages: shadowsocks-v$(PKG_VERSION).x86_64-unknown-linux-musl
             folder: shadowsocks-rust
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
             version_line:
             hash_line: 40
             release_api_command: curl -sL "https://api.github.com/repos/shadowsocks/shadowsocks-rust/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
-            release_download_url: https://github.com/shadowsocks/shadowsocks-rust/releases/download/v${{ env.PKG_VERSION }}/
-            file_name: /shadowsocks-v${{ env.PKG_VERSION }}.x86_64-unknown-linux-musl.tar.xz
+            release_download_url: https://github.com/shadowsocks/shadowsocks-rust/releases/download/v$(PKG_VERSION)/
+            file_name: /shadowsocks-v$(PKG_VERSION).x86_64-unknown-linux-musl.tar.xz
             
-          - pakcages: shadowsocks-v${{ env.PKG_VERSION }}.mips-unknown-linux-musl
+          - pakcages: shadowsocks-v$(PKG_VERSION).mips-unknown-linux-musl
             folder: shadowsocks-rust
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
             version_line:
             hash_line: 43
             release_api_command: curl -sL "https://api.github.com/repos/shadowsocks/shadowsocks-rust/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
-            release_download_url: https://github.com/sbwml/shadowsocks-rust-mips/releases/download/v${{ env.PKG_VERSION }}/
-            file_name: /shadowsocks-v${{ env.PKG_VERSION }}.mips-unknown-linux-musl.tar.xz
+            release_download_url: https://github.com/sbwml/shadowsocks-rust-mips/releases/download/v$(PKG_VERSION)/
+            file_name: /shadowsocks-v$(PKG_VERSION).mips-unknown-linux-musl.tar.xz
             
-          - pakcages: shadowsocks-v${{ env.PKG_VERSION }}.mipsel-unknown-linux-musl
+          - pakcages: shadowsocks-v$(PKG_VERSION).mipsel-unknown-linux-musl
             folder: shadowsocks-rust
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
             version_line:
             hash_line: 46
             release_api_command: curl -sL "https://api.github.com/repos/shadowsocks/shadowsocks-rust/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
-            release_download_url: https://github.com/sbwml/shadowsocks-rust-mips/releases/download/v${{ env.PKG_VERSION }}/
-            file_name: /shadowsocks-v${{ env.PKG_VERSION }}.mipsel-unknown-linux-musl.tar.xz             
+            release_download_url: https://github.com/sbwml/shadowsocks-rust-mips/releases/download/v$(PKG_VERSION)/
+            file_name: /shadowsocks-v$(PKG_VERSION).mipsel-unknown-linux-musl.tar.xz             
 
     steps:
       - name: Checkout
