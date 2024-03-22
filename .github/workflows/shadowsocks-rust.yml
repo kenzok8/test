@@ -1,4 +1,4 @@
-name: "test.v1"
+name: "shadowsocks-rust"
 on:
   repository_dispatch:
   workflow_dispatch:
