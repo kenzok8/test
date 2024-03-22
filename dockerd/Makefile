@@ -11,7 +11,7 @@ PKG_GIT_URL:=github.com/moby/moby
 PKG_GIT_REF:=v$(PKG_VERSION)
 PKG_SOURCE_URL:=https://codeload.$(PKG_GIT_URL)/tar.gz/$(PKG_GIT_REF)?
 PKG_HASH:=f4cfc4b57117b162373b0688da31dc6d65e25f714327cc3596112f56cc138288
-PKG_GIT_SHORT_COMMIT:=2ae903e # SHA1 used within the docker executables
+PKG_GIT_SHORT_COMMIT:=548f37a # SHA1 used within the docker executables
 
 PKG_MAINTAINER:=Gerard Ryan <G.M0N3Y.2503@gmail.com>
 
