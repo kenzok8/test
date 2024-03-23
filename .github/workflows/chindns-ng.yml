@@ -46,7 +46,7 @@ jobs:
       matrix:
         pakcages: [chinadns-ng]
         include:
-          - pakcages: chinadns-ng@aarch64-linux-musl@generic+v8a@fast+lto
+          - pakcages: chinadns-ng_aarch64
             folder: chinadns-ng
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -56,7 +56,7 @@ jobs:
             release_download_url: https://github.com/zfl9/chinadns-ng/releases/download/
             file_name: /chinadns-ng@aarch64-linux-musl@generic+v8a@fast+lto
 
-          - pakcages: chinadns-ng@arm-linux-musleabi@generic+v7a@fast+lto
+          - pakcages: chinadns-ng_arm-linux-musleabi
             folder: chinadns-ng
             version_head: PKG_VERSION:=
             hash_head: \    PKG_HASH:=
@@ -66,7 +66,7 @@ jobs:
             release_download_url: https://github.com/zfl9/chinadns-ng/releases/download/
             file_name: /chinadns-ng@arm-linux-musleabi@generic+v7a@fast+lto
 
-          - pakcages: chinadns-ng@arm-linux-musleabihf@generic+v7a@fast+lto
+          - pakcages: chinadns-ng_arm-linux-musleabihf
             folder: chinadns-ng
             version_head: PKG_VERSION:=
             hash_head: \    PKG_HASH:=
@@ -76,7 +76,7 @@ jobs:
             release_download_url: https://github.com/zfl9/chinadns-ng/releases/download/
             file_name: /chinadns-ng@arm-linux-musleabihf@generic+v7a@fast+lto
 
-          - pakcages: chinadns-ng@mips-linux-musl@mips32+soft_float@fast+lto
+          - pakcages: chinadns-ng_mips
             folder: chinadns-ng
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -86,7 +86,7 @@ jobs:
             release_download_url: https://github.com/zfl9/chinadns-ng/releases/download/
             file_name: /chinadns-ng@mips-linux-musl@mips32+soft_float@fast+lto
 
-          - pakcages: chinadns-ng@mipsel-linux-musl@mips32+soft_float@fast+lto
+          - pakcages: chinadns-ng_mipsel
             folder: chinadns-ng
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -96,7 +96,7 @@ jobs:
             release_download_url: https://github.com/zfl9/chinadns-ng/releases/download/
             file_name: /chinadns-ng@mipsel-linux-musl@mips32+soft_float@fast+lto
 
-          - pakcages: chinadns-ng@i386-linux-musl@i686@fast+lto
+          - pakcages: chinadns-ng_i386
             folder: chinadns-ng
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -106,7 +106,7 @@ jobs:
             release_download_url: https://github.com/zfl9/chinadns-ng/releases/download/
             file_name: /chinadns-ng@i386-linux-musl@i686@fast+lto
 
-          - pakcages: chinadns-ng@x86_64-linux-musl@x86_64@fast+lto
+          - pakcages: chinadns-ng_x86_64
             folder: chinadns-ng
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -119,7 +119,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@main
-
 
       - name: Initialization environment
         run: |
@@ -191,16 +190,16 @@ jobs:
         uses: peter-evans/create-pull-request@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chinadns-ng: update to ${{ steps.update.outputs.version }}"
+          commit-message: "${{ matrix.pakcages }}: update to ${{ steps.update.outputs.version }}"
           committer: action <actions@github.com>
           author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
           signoff: false
-          branch: patches-chinadns-ng-${{ steps.update.outputs.version }}
+          branch: patches-${{ matrix.pakcages }}-${{ steps.update.outputs.version }}
           base: main
           delete-branch: true
           body: |
-            chinadns-ng: update to ${{ steps.update.outputs.version }}
-          title: "chinadns-ng: update to ${{ steps.update.outputs.version }}"
+            ${{ matrix.pakcages }}: update to ${{ steps.update.outputs.version }}
+          title: "${{ matrix.pakcages }}: update to ${{ steps.update.outputs.version }}"
           labels: |
             automated-pr
           draft: false

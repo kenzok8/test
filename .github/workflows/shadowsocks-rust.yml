@@ -45,7 +45,7 @@ jobs:
       matrix:
         pakcages: [shadowsocks-rust]
         include:
-          - pakcages: aarch64-unknown-linux-musl
+          - pakcages: shadowsocks-rust-aarch64
             folder: shadowsocks-rust
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -55,7 +55,7 @@ jobs:
             release_download_url: https://github.com/shadowsocks/shadowsocks-rust/releases/download/v
             file_name: /shadowsocks-v$New_PKG_VERSION.aarch64-unknown-linux-musl.tar.xz
             
-          - pakcages: arm-unknown-linux-musleabi
+          - pakcages: shadowsocks-rust-arm-musleabi
             folder: shadowsocks-rust
             version_head: PKG_VERSION:=
             hash_head: \    PKG_HASH:=
@@ -65,7 +65,7 @@ jobs:
             release_download_url: https://github.com/shadowsocks/shadowsocks-rust/releases/download/v
             file_name: /shadowsocks-v$New_PKG_VERSION.arm-unknown-linux-musleabi.tar.xz
 
-          - pakcages: arm-unknown-linux-musleabihf
+          - pakcages: shadowsocks-rust-arm-musleabihf
             folder: shadowsocks-rust
             version_head: PKG_VERSION:=
             hash_head: \    PKG_HASH:=
@@ -75,7 +75,7 @@ jobs:
             release_download_url: https://github.com/shadowsocks/shadowsocks-rust/releases/download/v
             file_name: /shadowsocks-v$New_PKG_VERSION.arm-unknown-linux-musleabihf.tar.xz
             
-          - pakcages: i686-unknown-linux-musl
+          - pakcages: shadowsocks-rust-i686
             folder: shadowsocks-rust
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -85,7 +85,7 @@ jobs:
             release_download_url: https://github.com/shadowsocks/shadowsocks-rust/releases/download/v
             file_name: /shadowsocks-v$New_PKG_VERSION.i686-unknown-linux-musl.tar.xz        
 
-          - pakcages: x86_64-unknown-linux-musl
+          - pakcages: shadowsocks-rust-x86_64
             folder: shadowsocks-rust
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -95,7 +95,7 @@ jobs:
             release_download_url: https://github.com/shadowsocks/shadowsocks-rust/releases/download/v
             file_name: /shadowsocks-v$New_PKG_VERSION.x86_64-unknown-linux-musl.tar.xz
             
-          - pakcages: mips-unknown-linux-musl
+          - pakcages: shadowsocks-rust-mips
             folder: shadowsocks-rust
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -105,7 +105,7 @@ jobs:
             release_download_url: https://github.com/sbwml/shadowsocks-rust-mips/releases/download/v
             file_name: /shadowsocks-v$New_PKG_VERSION.mips-unknown-linux-musl.tar.xz
             
-          - pakcages: mipsel-unknown-linux-musl
+          - pakcages: shadowsocks-rust-mipsel
             folder: shadowsocks-rust
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=

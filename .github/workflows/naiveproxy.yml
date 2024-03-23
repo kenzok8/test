@@ -45,7 +45,7 @@ jobs:
       matrix:
         pakcages: [naiveproxy]
         include:
-          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-aarch64_cortex-a53
+          - pakcages: naiveproxy-aarch64_cortex-a53
             folder: naiveproxy
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -55,7 +55,7 @@ jobs:
             release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
             file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-aarch64_cortex-a53.tar.xz
             
-          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-aarch64_cortex-a72
+          - pakcages: naiveproxy-aarch64_cortex-a72
             folder: naiveproxy
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -65,7 +65,7 @@ jobs:
             release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
             file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-aarch64_cortex-a72.tar.xz
 
-          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-aarch64_generic
+          - pakcages: naiveproxy-aarch64_generic
             folder: naiveproxy
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -75,7 +75,7 @@ jobs:
             release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
             file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-aarch64_generic.tar.xz
             
-          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_arm1176jzf-s_vfp
+          - pakcages: naiveproxy-arm_arm1176jzf-s_vfp
             folder: naiveproxy
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -85,7 +85,7 @@ jobs:
             release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
             file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_arm1176jzf-s_vfp.tar.xz        
 
-          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_arm926ej-s
+          - pakcages: naiveproxy-arm_arm926ej-s
             folder: naiveproxy
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -95,7 +95,7 @@ jobs:
             release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
             file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_arm926ej-s.tar.xz
             
-          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a15_neon-vfpv4
+          - pakcages: naiveproxy-arm_cortex-a15_neon-vfpv4
             folder: naiveproxy
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -105,7 +105,7 @@ jobs:
             release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
             file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a15_neon-vfpv4.tar.xz
             
-          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a5_vfpv4
+          - pakcages: naiveproxy-arm_cortex-a5_vfpv4
             folder: naiveproxy
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -115,7 +115,7 @@ jobs:
             release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
             file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a5_vfpv4.tar.xz
 
-          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a7
+          - pakcages: naiveproxy-arm_cortex-a7
             folder: naiveproxy
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -125,7 +125,7 @@ jobs:
             release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
             file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a7.tar.xz
             
-          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a7_neon-vfpv4
+          - pakcages: naiveproxy-a7_neon-vfpv4
             folder: naiveproxy
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -135,7 +135,7 @@ jobs:
             release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
             file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a7_neon-vfpv4.tar.xz
 
-          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a7_vfpv4
+          - pakcages: naiveproxy-arm_cortex-a7_vfpv4
             folder: naiveproxy
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -145,7 +145,7 @@ jobs:
             release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
             file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a7_vfpv4.tar.xz
             
-          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a8_vfpv3
+          - pakcages: naiveproxy-arm_cortex-a8_vfpv3
             folder: naiveproxy
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -155,7 +155,7 @@ jobs:
             release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
             file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a8_vfpv3.tar.xz        
 
-          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a9
+          - pakcages: naiveproxy-arm_cortex-a9
             folder: naiveproxy
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -165,7 +165,7 @@ jobs:
             release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
             file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a9.tar.xz
             
-          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a9_neon
+          - pakcages: naiveproxy-arm_cortex-a9_neon
             folder: naiveproxy
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -175,7 +175,7 @@ jobs:
             release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
             file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a9_neon.tar.xz
             
-          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a9_vfpv3-d16
+          - pakcages: naiveproxy-arm_cortex-a9_vfpv3-d16
             folder: naiveproxy
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -185,7 +185,7 @@ jobs:
             release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
             file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a9_vfpv3-d16.tar.xz
 
-          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_mpcore
+          - pakcages: naiveproxy-arm_mpcore
             folder: naiveproxy
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -195,7 +195,7 @@ jobs:
             release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
             file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_mpcore.tar.xz
             
-          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_xscale
+          - pakcages: naiveproxy-arm_xscale
             folder: naiveproxy
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -205,7 +205,7 @@ jobs:
             release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
             file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_xscale.tar.xz
 
-          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-mipsel_24kc
+          - pakcages: naiveproxy-mipsel_24kc
             folder: naiveproxy
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -215,7 +215,7 @@ jobs:
             release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
             file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-mipsel_24kc.tar.xz
             
-          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-mipsel_mips32
+          - pakcages: naiveproxy-mipsel_mips32
             folder: naiveproxy
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -225,7 +225,7 @@ jobs:
             release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
             file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-mipsel_mips32.tar.xz        
 
-          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-riscv64
+          - pakcages: naiveproxy-riscv64
             folder: naiveproxy
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -235,7 +235,7 @@ jobs:
             release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
             file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-riscv64.tar.xz
             
-          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-x86
+          - pakcages: naiveproxy-x86
             folder: naiveproxy
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -245,7 +245,7 @@ jobs:
             release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
             file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-x86.tar.xz
             
-          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-x86_64
+          - pakcages: naiveproxy-x86_64
             folder: naiveproxy
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -333,12 +333,12 @@ jobs:
           committer: action <actions@github.com>
           author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
           signoff: false
-          branch: patches-naiveproxy-${{ steps.update.outputs.version }}
+          branch: patches-${{ matrix.pakcages }}-${{ steps.update.outputs.version }}
           base: main
           delete-branch: true
           body: |
-            naiveproxy: update to ${{ steps.update.outputs.version }}
-          title: "naiveproxy: update to ${{ steps.update.outputs.version }}"
+            ${{ matrix.pakcages }}: update to ${{ steps.update.outputs.version }}
+          title: "${{ matrix.pakcages }}: update to ${{ steps.update.outputs.version }}"
           labels: |
             automated-pr
           draft: false
