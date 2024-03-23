@@ -45,7 +45,7 @@ jobs:
       matrix:
         pakcages: [shadowsocks-rust]
         include:
-          - pakcages: shadowsocks-v$New_PKG_VERSION.aarch64-unknown-linux-musl
+          - pakcages: aarch64-unknown-linux-musl
             folder: shadowsocks-rust
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -55,7 +55,7 @@ jobs:
             release_download_url: https://github.com/shadowsocks/shadowsocks-rust/releases/download/v
             file_name: /shadowsocks-v$New_PKG_VERSION.aarch64-unknown-linux-musl.tar.xz
             
-          - pakcages: shadowsocks-v$New_PKG_VERSION.arm-unknown-linux-musleabi
+          - pakcages: arm-unknown-linux-musleabi
             folder: shadowsocks-rust
             version_head: PKG_VERSION:=
             hash_head: \    PKG_HASH:=
@@ -65,7 +65,7 @@ jobs:
             release_download_url: https://github.com/shadowsocks/shadowsocks-rust/releases/download/v
             file_name: /shadowsocks-v$New_PKG_VERSION.arm-unknown-linux-musleabi.tar.xz
 
-          - pakcages: shadowsocks-v$New_PKG_VERSION.arm-unknown-linux-musleabihf
+          - pakcages: arm-unknown-linux-musleabihf
             folder: shadowsocks-rust
             version_head: PKG_VERSION:=
             hash_head: \    PKG_HASH:=
@@ -75,7 +75,7 @@ jobs:
             release_download_url: https://github.com/shadowsocks/shadowsocks-rust/releases/download/v
             file_name: /shadowsocks-v$New_PKG_VERSION.arm-unknown-linux-musleabihf.tar.xz
             
-          - pakcages: shadowsocks-v$New_PKG_VERSION.i686-unknown-linux-musl
+          - pakcages: i686-unknown-linux-musl
             folder: shadowsocks-rust
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -85,7 +85,7 @@ jobs:
             release_download_url: https://github.com/shadowsocks/shadowsocks-rust/releases/download/v
             file_name: /shadowsocks-v$New_PKG_VERSION.i686-unknown-linux-musl.tar.xz        
 
-          - pakcages: shadowsocks-v$New_PKG_VERSION.x86_64-unknown-linux-musl
+          - pakcages: x86_64-unknown-linux-musl
             folder: shadowsocks-rust
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -95,7 +95,7 @@ jobs:
             release_download_url: https://github.com/shadowsocks/shadowsocks-rust/releases/download/v
             file_name: /shadowsocks-v$New_PKG_VERSION.x86_64-unknown-linux-musl.tar.xz
             
-          - pakcages: shadowsocks-v$New_PKG_VERSION.mips-unknown-linux-musl
+          - pakcages: mips-unknown-linux-musl
             folder: shadowsocks-rust
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -105,7 +105,7 @@ jobs:
             release_download_url: https://github.com/sbwml/shadowsocks-rust-mips/releases/download/v
             file_name: /shadowsocks-v$New_PKG_VERSION.mips-unknown-linux-musl.tar.xz
             
-          - pakcages: shadowsocks-v$New_PKG_VERSION.mipsel-unknown-linux-musl
+          - pakcages: mipsel-unknown-linux-musl
             folder: shadowsocks-rust
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
@@ -189,16 +189,16 @@ jobs:
         uses: peter-evans/create-pull-request@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "shadowsocks-rust: update to ${{ steps.update.outputs.version }}"
+          commit-message: "${{ matrix.pakcages }}: update to ${{ steps.update.outputs.version }}"
           committer: action <actions@github.com>
           author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
           signoff: false
-          branch: patches-shadowsocks-rust-${{ steps.update.outputs.version }}
+          branch: patches-${{ matrix.pakcages }}-${{ steps.update.outputs.version }}
           base: main
           delete-branch: true
           body: |
-            shadowsocks-rust: update to ${{ steps.update.outputs.version }}
-          title: "shadowsocks-rust: update to ${{ steps.update.outputs.version }}"
+            ${{ matrix.pakcages }}: update to ${{ steps.update.outputs.version }}
+          title: "${{ matrix.pakcages }}: update to ${{ steps.update.outputs.version }}"
           labels: |
             automated-pr
           draft: false

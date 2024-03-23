@@ -43,7 +43,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pakcages: [aarch64, armv7, armv9, arm, x86_64]
+        pakcages: [shadow-tls]
         include:
           - pakcages: shadow-tls-aarch64-unknown-linux-musl
             folder: shadow-tls
