@@ -6,14 +6,14 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=chinadns-ng
-PKG_VERSION:=2024.03.07
+PKG_VERSION:=0.2.25
 PKG_RELEASE:=1
 
 PKG_SOURCE_URL:=https://github.com/zfl9/chinadns-ng/releases/download/$(PKG_VERSION)
 UNPACK_CMD=$(CP) $(DL_DIR)/$(PKG_SOURCE) $(PKG_BUILD_DIR)/chinadns-ng
 
 ifeq ($(ARCH),aarch64)
-  PKG_SOURCE:=chinadns-ng@aarch64-linux-musl@generic+v8a@fast+lto
+  PKG_HASH:=3295476b37f549a68906519d3eaecb74bf3b6eaf9094cebb16ee84f0151373c6
   PKG_HASH:=a699d6d6a3b03b068d6a52fa411611f0e6738a51b5c43cb745c36e2d155e03d8
 else ifeq ($(ARCH),arm)
   ARM_CPU_FEATURES:=$(word 2,$(subst +,$(space),$(call qstrip,$(CONFIG_CPU_TYPE))))
