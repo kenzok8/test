@@ -33,30 +33,229 @@ jobs:
         
       - name: SSH connection to Actions
         uses: kenzok78/ssh-action@master
-        if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
+        if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')    
 
   job_auto_update_packages:
     if: ${{ always() }}
     needs: job_init
     runs-on: ubuntu-latest
-    name: update-${{ matrix.pakcages }}
+    name: update-${{ matrix.pakcages }} 
     strategy:
       fail-fast: false
       matrix:
-        package: [aarch64_cortex-a53, aarch64_cortex-a72, aarch64_generic, arm_arm1176jzf-s_vfp, arm_arm926ej-s, arm_cortex-a15_neon-vfpv4, arm_cortex-a5_vfpv4， arm_cortex-a7， arm_cortex-a7_neon-vfpv4， arm_cortex-a7_vfpv4， arm_cortex-a8_vfpv3， arm_cortex-a9，arm_cortex-a9_neon， arm_cortex-a9_vfpv3-d16，arm_mpcore， arm_xscale，mipsel_24kc， mipsel_mips32，riscv64，x86，x86_64]
-    env:
-      FOLDER: naiveproxy
-      VERSION_HEAD: PKG_VERSION:=
-      HASH_HEAD: "  PKG_HASH:="
-      RELEASE_API_COMMAND: "curl -sL 'https://api.github.com/repos/klzgrad/naiveproxy/releases' | jq -r '.[0].tag_name' | sed -e 's/.*v//'"
-      RELEASE_DOWNLOAD_URL: "https://github.com/klzgrad/naiveproxy/releases/download/v"
-    steps:
-      - name: Set up package details
-        run: |
-          New_PKG_VERSION=$(eval $RELEASE_API_COMMAND)
-          echo "FILE_NAME=/naiveproxy-v${New_PKG_VERSION}-openwrt-${{ matrix.package }}.tar.xz"
-          echo "file_name=${FILE_NAME}" >> $GITHUB_ENV
+        pakcages: [naiveproxy-v$New_PKG_VERSION-openwrt-aarch64_cortex-a53, naiveproxy-v$New_PKG_VERSION-openwrt-aarch64_cortex-a72, naiveproxy-v$New_PKG_VERSION-openwrt-aarch64_generic, naiveproxy-v$New_PKG_VERSION-openwrt-arm_arm1176jzf-s_vfp, naiveproxy-v$New_PKG_VERSION-openwrt-arm_arm926ej-s, naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a15_neon-vfpv4, naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a5_vfpv4]
+        include:
+          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-aarch64_cortex-a53
+            folder: naiveproxy
+            version_head: PKG_VERSION:=
+            hash_head: \  PKG_HASH:=
+            version_line:
+            hash_line: 15
+            release_api_command: curl -sL "https://api.github.com/repos/klzgrad/naiveproxy/releases" | jq -r first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
+            file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-aarch64_cortex-a53.tar.xz
+            
+          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-aarch64_cortex-a72
+            folder: naiveproxy
+            version_head: PKG_VERSION:=
+            hash_head: \  PKG_HASH:=
+            version_line:
+            hash_line: 17
+            release_api_command: curl -sL "https://api.github.com/repos/klzgrad/naiveproxy/releases" | jq -r first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
+            file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-aarch64_cortex-a72.tar.xz
 
+          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-aarch64_generic
+            folder: naiveproxy
+            version_head: PKG_VERSION:=
+            hash_head: \  PKG_HASH:=
+            version_line:
+            hash_line: 19
+            release_api_command: curl -sL "https://api.github.com/repos/klzgrad/naiveproxy/releases" | jq -r first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
+            file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-aarch64_generic.tar.xz
+            
+          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_arm1176jzf-s_vfp
+            folder: naiveproxy
+            version_head: PKG_VERSION:=
+            hash_head: \  PKG_HASH:=
+            version_line:
+            hash_line: 21
+            release_api_command: curl -sL "https://api.github.com/repos/klzgrad/naiveproxy/releases" | jq -r first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
+            file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_arm1176jzf-s_vfp.tar.xz        
+
+          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_arm926ej-s
+            folder: naiveproxy
+            version_head: PKG_VERSION:=
+            hash_head: \  PKG_HASH:=
+            version_line:
+            hash_line: 23
+            release_api_command: curl -sL "https://api.github.com/repos/klzgrad/naiveproxy/releases" | jq -r first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
+            file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_arm926ej-s.tar.xz
+            
+          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a15_neon-vfpv4
+            folder: naiveproxy
+            version_head: PKG_VERSION:=
+            hash_head: \  PKG_HASH:=
+            version_line:
+            hash_line: 25
+            release_api_command: curl -sL "https://api.github.com/repos/klzgrad/naiveproxy/releases" | jq -r first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
+            file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a15_neon-vfpv4.tar.xz
+            
+          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a5_vfpv4
+            folder: naiveproxy
+            version_head: PKG_VERSION:=
+            hash_head: \  PKG_HASH:=
+            version_line:
+            hash_line: 27
+            release_api_command: curl -sL "https://api.github.com/repos/klzgrad/naiveproxy/releases" | jq -r first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
+            file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a5_vfpv4.tar.xz
+
+          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a7
+            folder: naiveproxy
+            version_head: PKG_VERSION:=
+            hash_head: \  PKG_HASH:=
+            version_line:
+            hash_line: 29
+            release_api_command: curl -sL "https://api.github.com/repos/klzgrad/naiveproxy/releases" | jq -r first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
+            file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a7.tar.xz
+            
+          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a7_neon-vfpv4
+            folder: naiveproxy
+            version_head: PKG_VERSION:=
+            hash_head: \  PKG_HASH:=
+            version_line:
+            hash_line: 31
+            release_api_command: curl -sL "https://api.github.com/repos/klzgrad/naiveproxy/releases" | jq -r first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
+            file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a7_neon-vfpv4.tar.xz
+
+          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a7_vfpv4
+            folder: naiveproxy
+            version_head: PKG_VERSION:=
+            hash_head: \  PKG_HASH:=
+            version_line:
+            hash_line: 33
+            release_api_command: curl -sL "https://api.github.com/repos/klzgrad/naiveproxy/releases" | jq -r first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
+            file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a7_vfpv4.tar.xz
+            
+          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a8_vfpv3
+            folder: naiveproxy
+            version_head: PKG_VERSION:=
+            hash_head: \  PKG_HASH:=
+            version_line:
+            hash_line: 35
+            release_api_command: curl -sL "https://api.github.com/repos/klzgrad/naiveproxy/releases" | jq -r first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
+            file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a8_vfpv3.tar.xz        
+
+          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a9
+            folder: naiveproxy
+            version_head: PKG_VERSION:=
+            hash_head: \  PKG_HASH:=
+            version_line:
+            hash_line: 37
+            release_api_command: curl -sL "https://api.github.com/repos/klzgrad/naiveproxy/releases" | jq -r first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
+            file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a9.tar.xz
+            
+          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a9_neon
+            folder: naiveproxy
+            version_head: PKG_VERSION:=
+            hash_head: \  PKG_HASH:=
+            version_line:
+            hash_line: 39
+            release_api_command: curl -sL "https://api.github.com/repos/klzgrad/naiveproxy/releases" | jq -r first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
+            file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a9_neon.tar.xz
+            
+          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a9_vfpv3-d16
+            folder: naiveproxy
+            version_head: PKG_VERSION:=
+            hash_head: \  PKG_HASH:=
+            version_line:
+            hash_line: 41
+            release_api_command: curl -sL "https://api.github.com/repos/klzgrad/naiveproxy/releases" | jq -r first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
+            file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_cortex-a9_vfpv3-d16.tar.xz
+
+          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_mpcore
+            folder: naiveproxy
+            version_head: PKG_VERSION:=
+            hash_head: \  PKG_HASH:=
+            version_line:
+            hash_line: 43
+            release_api_command: curl -sL "https://api.github.com/repos/klzgrad/naiveproxy/releases" | jq -r first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
+            file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_mpcore.tar.xz
+            
+          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-arm_xscale
+            folder: naiveproxy
+            version_head: PKG_VERSION:=
+            hash_head: \  PKG_HASH:=
+            version_line:
+            hash_line: 45
+            release_api_command: curl -sL "https://api.github.com/repos/klzgrad/naiveproxy/releases" | jq -r first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
+            file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-arm_xscale.tar.xz
+
+          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-mipsel_24kc
+            folder: naiveproxy
+            version_head: PKG_VERSION:=
+            hash_head: \  PKG_HASH:=
+            version_line:
+            hash_line: 47
+            release_api_command: curl -sL "https://api.github.com/repos/klzgrad/naiveproxy/releases" | jq -r first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
+            file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-mipsel_24kc.tar.xz
+            
+          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-mipsel_mips32
+            folder: naiveproxy
+            version_head: PKG_VERSION:=
+            hash_head: \  PKG_HASH:=
+            version_line:
+            hash_line: 49
+            release_api_command: curl -sL "https://api.github.com/repos/klzgrad/naiveproxy/releases" | jq -r first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
+            file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-mipsel_mips32.tar.xz        
+
+          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-riscv64
+            folder: naiveproxy
+            version_head: PKG_VERSION:=
+            hash_head: \  PKG_HASH:=
+            version_line:
+            hash_line: 51
+            release_api_command: curl -sL "https://api.github.com/repos/klzgrad/naiveproxy/releases" | jq -r first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
+            file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-riscv64.tar.xz
+            
+          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-x86
+            folder: naiveproxy
+            version_head: PKG_VERSION:=
+            hash_head: \  PKG_HASH:=
+            version_line:
+            hash_line: 53
+            release_api_command: curl -sL "https://api.github.com/repos/klzgrad/naiveproxy/releases" | jq -r first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
+            file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-x86.tar.xz
+            
+          - pakcages: naiveproxy-v$New_PKG_VERSION-openwrt-x86_64
+            folder: naiveproxy
+            version_head: PKG_VERSION:=
+            hash_head: \  PKG_HASH:=
+            version_line:
+            hash_line: 55
+            release_api_command: curl -sL "https://api.github.com/repos/klzgrad/naiveproxy/releases" | jq -r first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://github.com/klzgrad/naiveproxy/releases/download/v
+            file_name: /naiveproxy-v$New_PKG_VERSION-openwrt-x86_64.tar.xz                      
+
+    steps:
       - name: Checkout
         uses: actions/checkout@main
 
