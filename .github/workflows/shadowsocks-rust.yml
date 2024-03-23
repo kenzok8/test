@@ -43,7 +43,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pakcages: [shadowsocks-v$New_PKG_VERSION.aarch64-unknown-linux-musl, shadowsocks-v$New_PKG_VERSION.arm-unknown-linux-musleabi, shadowsocks-v$New_PKG_VERSION.arm-unknown-linux-musleabihf, shadowsocks-v$New_PKG_VERSION.i686-unknown-linux-musl, shadowsocks-v$New_PKG_VERSION.x86_64-unknown-linux-musl, shadowsocks-v$New_PKG_VERSION.mips-unknown-linux-musl, shadowsocks-v$New_PKG_VERSION.mipsel-unknown-linux-musl]
+        pakcages: [shadowsocks-rust]
         include:
           - pakcages: shadowsocks-v$New_PKG_VERSION.aarch64-unknown-linux-musl
             folder: shadowsocks-rust
@@ -119,7 +119,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
 
-
       - name: Initialization environment
         run: |
           cd && mkdir -p pack && cd pack
@@ -190,16 +189,16 @@ jobs:
         uses: peter-evans/create-pull-request@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "${{ matrix.pakcages }}: update to ${{ steps.update.outputs.version }}"
+          commit-message: "shadowsocks-rust: update to ${{ steps.update.outputs.version }}"
           committer: action <actions@github.com>
           author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
           signoff: false
-          branch: patches-${{ matrix.pakcages }}-${{ steps.update.outputs.version }}
+          branch: patches-shadowsocks-rust-${{ steps.update.outputs.version }}
           base: main
           delete-branch: true
           body: |
-            ${{ matrix.pakcages }}: update to ${{ steps.update.outputs.version }}
-          title: "${{ matrix.pakcages }}: update to ${{ steps.update.outputs.version }}"
+            shadowsocks-rust: update to ${{ steps.update.outputs.version }}
+          title: "shadowsocks-rust: update to ${{ steps.update.outputs.version }}"
           labels: |
             automated-pr
           draft: false

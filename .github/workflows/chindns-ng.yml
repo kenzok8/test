@@ -20,7 +20,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
 
-
       - name: Initialization environment
         run: |
           sudo timedatectl set-timezone "$TZ"
@@ -45,7 +44,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pakcages: [chinadns-ng@aarch64-linux-musl@generic+v8a@fast+lto, chinadns-ng@arm-linux-musleabi@generic+v7a@fast+lto, chinadns-ng@arm-linux-musleabihf@generic+v7a@fast+lto, chinadns-ng@mips-linux-musl@mips32+soft_float@fast+lto, chinadns-ng@mipsel-linux-musl@mips32+soft_float@fast+lto, chinadns-ng@i386-linux-musl@i686@fast+lto, chinadns-ng@x86_64-linux-musl@x86_64@fast+lto]
+        pakcages: [chinadns-ng]
         include:
           - pakcages: chinadns-ng@aarch64-linux-musl@generic+v8a@fast+lto
             folder: chinadns-ng
@@ -192,16 +191,16 @@ jobs:
         uses: peter-evans/create-pull-request@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "${{ matrix.pakcages }}: update to ${{ steps.update.outputs.version }}"
+          commit-message: "chinadns-ng: update to ${{ steps.update.outputs.version }}"
           committer: action <actions@github.com>
           author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
           signoff: false
-          branch: patches-${{ matrix.pakcages }}-${{ steps.update.outputs.version }}
+          branch: patches-chinadns-ng-${{ steps.update.outputs.version }}
           base: main
           delete-branch: true
           body: |
-            ${{ matrix.pakcages }}: update to ${{ steps.update.outputs.version }}
-          title: "${{ matrix.pakcages }}: update to ${{ steps.update.outputs.version }}"
+            chinadns-ng: update to ${{ steps.update.outputs.version }}
+          title: "chinadns-ng: update to ${{ steps.update.outputs.version }}"
           labels: |
             automated-pr
           draft: false

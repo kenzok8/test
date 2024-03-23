@@ -19,7 +19,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
 
-
       - name: Initialization environment
         run: |
           sudo timedatectl set-timezone "$TZ"

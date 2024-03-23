@@ -333,12 +333,12 @@ jobs:
           committer: action <actions@github.com>
           author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
           signoff: false
-          branch: patches-${{ matrix.pakcages }}-${{ steps.update.outputs.version }}
+          branch: patches-naiveproxy-${{ steps.update.outputs.version }}
           base: main
           delete-branch: true
           body: |
-            ${{ matrix.pakcages }}: update to ${{ steps.update.outputs.version }}
-          title: "${{ matrix.pakcages }}: update to ${{ steps.update.outputs.version }}"
+            naiveproxy: update to ${{ steps.update.outputs.version }}
+          title: "naiveproxy: update to ${{ steps.update.outputs.version }}"
           labels: |
             automated-pr
           draft: false
