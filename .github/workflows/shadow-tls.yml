@@ -12,7 +12,6 @@ on:
 env:
   TZ: Asia/Shanghai
 
-
 jobs:
   job_init:
     runs-on: ubuntu-latest
