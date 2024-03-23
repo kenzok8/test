@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/package.mk
 
 PKG_NAME:=shadow-tls
-PKG_VERSION:=0.12
+PKG_VERSION:=0.2.25
 PKG_RELEASE:=1
 
 PKG_LICENSE_FILES:=LICENSE
@@ -20,7 +20,7 @@ else ifeq ($(ARCH),arm)
         PKG_HASH:=e6f918a072557c50fd0e50af9a156a9b102af72c1d010ff85d08d13006c5
     else ifeq ($(CONFIG_CPU_TYPE),cortex-a9)
         RELEASE_ARCH:=$(RELEASE_HEAD)-armv7-$(RELEASE_FOOT)eabihf
-        PKG_HASH:=e6f918a072557c50fd0ea0af9a156a9b102af72c1d010ff85d08d13006c5
+    PKG_HASH:=e6f918a072557c50fd0ea950af9a156a9b102af72c1d010ff85d08d13006c54f
     else
         RELEASE_ARCH:=$(RELEASE_HEAD)-arm-$(RELEASE_FOOT)eabi
         PKG_HASH:=b6743bc60e1727972ece05acf3a931e5be05cedee6f637e7e3d8c5b8d58f
