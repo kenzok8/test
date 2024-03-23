@@ -13,7 +13,7 @@ RELEASE_HEAD:=$(PKG_NAME)
 RELEASE_FOOT:=unknown-linux-musl
 ifeq ($(ARCH),aarch64)
 	RELEASE_ARCH:=$(RELEASE_HEAD)-aarch64-$(RELEASE_FOOT)
-        PKG_HASH:=3295476b37f549a68906519d3eaecb74bf3b6eaf9094cebb16ee84f0151373c6
+    PKG_HASH:=3295476b37f549a68906519d3eaecb74bf3b6eaf9094cebb16ee84f0151373c6
 else ifeq ($(ARCH),arm)
     ifeq ($(CONFIG_CPU_TYPE),cortex-a7)
         RELEASE_ARCH:=$(RELEASE_HEAD)-armv7-$(RELEASE_FOOT)eabihf
@@ -27,7 +27,7 @@ else ifeq ($(ARCH),arm)
     endif
 else ifeq ($(ARCH),x86_64)
 	RELEASE_ARCH:=$(RELEASE_HEAD)-x86_64-$(RELEASE_FOOT)
-        PKG_HASH:=a173f5f2d57f45211b68e10ceeddc15b1791077b914fa89747bc705fddc71532
+    PKG_HASH:=a173f5f2d57f45211b68e10ceeddc15b1791077b914fa89747bc705fddc71532
 else
 	PKG_SOURCE:=dummy
 	PKG_HASH:=dummy

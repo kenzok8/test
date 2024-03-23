@@ -49,7 +49,7 @@ jobs:
           - pakcages: shadow-tls-aarch64-unknown-linux-musl
             folder: shadow-tls
             version_head: PKG_VERSION:=
-            hash_head: \        PKG_HASH:=
+            hash_head: \    PKG_HASH:=
             version_line: 
             hash_line: 16
             release_api_command: curl -sL "https://api.github.com/repos/ihciah/shadow-tls/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
@@ -89,7 +89,7 @@ jobs:
           - pakcages: shadow-tls-x86_64-unknown-linux-musl
             folder: shadow-tls
             version_head: PKG_VERSION:=
-            hash_head: \        PKG_HASH:=
+            hash_head: \    PKG_HASH:=
             version_line: 
             hash_line: 30
             release_api_command: curl -sL "https://api.github.com/repos/ihciah/shadow-tls/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
