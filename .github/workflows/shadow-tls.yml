@@ -43,7 +43,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pakcages: [shadow-tls]
+        pakcages: [aarch64, armv7, armv9, arm, x86_64]
         include:
           - pakcages: shadow-tls-aarch64-unknown-linux-musl
             folder: shadow-tls
@@ -170,16 +170,16 @@ jobs:
         uses: peter-evans/create-pull-request@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "shadow-tls: update to ${{ steps.update.outputs.version }}"
+          commit-message: "${{ matrix.pakcages }}: update to ${{ steps.update.outputs.version }}"
           committer: action <actions@github.com>
           author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
           signoff: false
-          branch: patches-shadow-tls-${{ steps.update.outputs.version }}
+          branch: patches-${{ matrix.pakcages }}-${{ steps.update.outputs.version }}
           base: main
           delete-branch: true
           body: |
-            shadow-tls: update to ${{ steps.update.outputs.version }}
-          title: "shadow-tls: update to ${{ steps.update.outputs.version }}"
+            ${{ matrix.pakcages }}: update to ${{ steps.update.outputs.version }}
+          title: "${{ matrix.pakcages }}: update to ${{ steps.update.outputs.version }}"
           labels: |
             automated-pr
           draft: false
