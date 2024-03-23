@@ -27,7 +27,7 @@ else ifeq ($(ARCH),arm)
     endif
 else ifeq ($(ARCH),x86_64)
 	RELEASE_ARCH:=$(RELEASE_HEAD)-x86_64-$(RELEASE_FOOT)
-	PKG_HASH:=a173f5f2d57f45211b68e10eddc15b1791077b914fa89747bc705fddc715
+  PKG_HASH:=a173f5f2d57f45211b68e10ceeddc15b1791077b914fa89747bc705fddc71532
 else
 	PKG_SOURCE:=dummy
 	PKG_HASH:=dummy
