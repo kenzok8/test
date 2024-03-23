@@ -44,7 +44,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pakcages: [shadow-tls-aarch64-unknown-linux-musl, shadow-tls-armv7-unknown-linux-musleabihf, shadow-tls-arm-unknown-linux-musleabi, shadow-tls-x86_64-unknown-linux-musl, chinadns-ng@i386-linux-musl@i686@fast+lto, chinadns-ng@x86_64-linux-musl@x86_64@fast+lto]
+        pakcages: [shadow-tls-aarch64-unknown-linux-musl, shadow-tls-armv7-unknown-linux-musleabihf, shadow-tls-arm-unknown-linux-musleabi, shadow-tls-x86_64-unknown-linux-musl]
         include:
           - pakcages: shadow-tls-aarch64-unknown-linux-musl
             folder: chinadns-ng
