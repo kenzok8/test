@@ -14,7 +14,7 @@ PKG_SOURCE_URL:=https://github.com/klzgrad/naiveproxy/releases/download/v$(PKG_V
 ifeq ($(ARCH_PACKAGES),aarch64_cortex-a53)
   PKG_HASH:=3f7ba5f4660f801e675aac8124bd7da714ff9b5a11c72955086ed4914fdd0600
 else ifeq ($(ARCH_PACKAGES),aarch64_cortex-a72)
-  PKG_HASH:=064de7e486e165b759fcdff2c2d00138bdd2f9498712fc06ab8e76b15e6ecf2c
+  PKG_HASH:=4027ff6b5d14ea0b4921f1048c2fa639c368b360bd34dd35bc5827c7377ba7ac
 else ifeq ($(ARCH_PACKAGES),aarch64_generic)
   PKG_HASH:=eb500d7baf5b05e1a4dbdd3554168a21ae60bb72efcb58f14357ca2f089e04c4
 else ifeq ($(ARCH_PACKAGES),arm_arm1176jzf-s_vfp)
