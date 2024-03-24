@@ -1,4 +1,4 @@
-name: "Auto v2"
+name: "brook *"
 on:
   repository_dispatch:
   workflow_dispatch:

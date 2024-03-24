@@ -1,4 +1,4 @@
-name: "Auto v1"
+name: "alist *"
 on:
   repository_dispatch:
   workflow_dispatch:
