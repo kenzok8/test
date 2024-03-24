@@ -99,9 +99,9 @@ jobs:
             hash_head: PKG_HASH:=
             version_line: 
             hash_line: 
-            release_api_command: curl -sL "https://api.github.com/repos/moby/moby/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
+            release_api_command: curl -sL "https://api.github.com/repos/moby/moby/releases" | jq -r 'map(select(.latest == true)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://codeload.github.com/moby/moby/tar.gz/v
-            file_name:
+            file_name:l
 
           - pakcages: filebrowser
             folder: filebrowser
