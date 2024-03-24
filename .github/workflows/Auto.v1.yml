@@ -49,7 +49,7 @@ jobs:
             hash_head: \PKG_HASH:=
             version_line: 
             hash_line: 14
-            release_api_command: curl -sL "https://api.github.com/repos/AdguardTeam/AdGuardHome/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
+            release_api_command: curl -sL "https://api.github.com/repos/AdguardTeam/AdGuardHome/releases" | jq -r 'map(select(.prerelease == false)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://codeload.github.com/AdguardTeam/AdGuardHome/tar.gz/v
             file_name: 
 
@@ -59,7 +59,7 @@ jobs:
             hash_head: \        HASH:=
             version_line: 
             hash_line: 60
-            release_api_command: curl -sL "https://api.github.com/repos/AdguardTeam/AdGuardHome/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
+            release_api_command: curl -sL "https://api.github.com/repos/AdguardTeam/AdGuardHome/releases" | jq -r 'map(select(.prerelease == false)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://github.com/AdguardTeam/AdGuardHome/releases/download/v
             file_name: /AdGuardHome_frontend.tar.gz
  
@@ -69,7 +69,7 @@ jobs:
             hash_head: \PKG_HASH:=
             version_line: 
             hash_line: 16
-            release_api_command: curl -sL "https://api.github.com/repos/alist-org/alist/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
+            release_api_command: curl -sL "https://api.github.com/repos/alist-org/alist/releases" | jq -r 'map(select(.prerelease == false)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://codeload.github.com/alist-org/alist/tar.gz/v
             file_name: 
 
@@ -79,7 +79,7 @@ jobs:
             hash_head: \  HASH:=
             version_line: 
             hash_line: 26
-            release_api_command: curl -sL "https://api.github.com/repos/alist-org/alist-web/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
+            release_api_command: curl -sL "https://api.github.com/repos/alist-org/alist-web/releases" | jq -r 'map(select(.prerelease == false)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://github.com/alist-org/alist-web/releases/download/
             file_name: /dist.tar.gz 
             
@@ -89,7 +89,7 @@ jobs:
             hash_head: PKG_HASH:=
             version_line: 
             hash_line: 
-            release_api_command: curl -sL "https://api.github.com/repos/jeessy2/ddns-go/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
+            release_api_command: curl -sL "https://api.github.com/repos/jeessy2/ddns-go/releases" | jq -r 'map(select(.prerelease == false)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://codeload.github.com/jeessy2/ddns-go/tar.gz/v
             file_name:
 
@@ -99,7 +99,7 @@ jobs:
             hash_head: PKG_HASH:=
             version_line: 
             hash_line: 
-            release_api_command: curl -sL "https://api.github.com/repos/moby/moby/releases" | jq -r 'map(select(.prerelease == true)) | first | .tag_name' | sed -e 's/.*v//'
+            release_api_command: curl -sL "https://api.github.com/repos/moby/moby/releases" | jq -r 'map(select(.prerelease == false)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://codeload.github.com/moby/moby/tar.gz/v
             file_name: 
 
@@ -109,7 +109,7 @@ jobs:
             hash_head: PKG_HASH:=
             version_line: 
             hash_line: 
-            release_api_command: curl -sL "https://api.github.com/repos/filebrowser/filebrowser/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
+            release_api_command: curl -sL "https://api.github.com/repos/filebrowser/filebrowser/releases" | jq -r 'map(select(.prerelease == false)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://codeload.github.com/filebrowser/filebrowser/tar.gz/v
             file_name:
 
@@ -119,7 +119,7 @@ jobs:
             hash_head: PKG_HASH:=
             version_line: 
             hash_line: 
-            release_api_command: curl -sL "https://api.github.com/repos/ginuerzh/gost/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
+            release_api_command: curl -sL "https://api.github.com/repos/ginuerzh/gost/releases" | jq -r 'map(select(.prerelease == false)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://codeload.github.com/ginuerzh/gost/tar.gz/v
             file_name: 
 
@@ -129,7 +129,7 @@ jobs:
             hash_head: PKG_HASH:=
             version_line: 
             hash_line: 
-            release_api_command: curl -sL "https://api.github.com/repos/IrineSistiana/mosdns/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
+            release_api_command: curl -sL "https://api.github.com/repos/IrineSistiana/mosdns/releases" | jq -r 'map(select(.prerelease == false)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://codeload.github.com/IrineSistiana/mosdns/tar.gz/v
             file_name: 
 
@@ -139,7 +139,7 @@ jobs:
             hash_head: PKG_HASH:=
             version_line: 
             hash_line: 
-            release_api_command: curl -sL "https://api.github.com/repos/golgote/neturl/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
+            release_api_command: curl -sL "https://api.github.com/repos/golgote/neturl/releases" | jq -r 'map(select(.prerelease == false)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://codeload.github.com/golgote/neturl/tar.gz/v
             file_name: 
 
@@ -149,7 +149,7 @@ jobs:
             hash_head: PKG_HASH:=
             version_line: 
             hash_line: 
-            release_api_command: curl -sL "https://api.github.com/repos/gdy666/lucky/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
+            release_api_command: curl -sL "https://api.github.com/repos/gdy666/lucky/releases" | jq -r 'map(select(.prerelease == false)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://codeload.github.com/gdy666/lucky/tar.gz/v
             file_name: 
 
@@ -169,7 +169,7 @@ jobs:
             hash_head: PKG_HASH:=
             version_line: 
             hash_line: 
-            release_api_command: curl -sL "https://api.github.com/repos/upx/upx/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
+            release_api_command: curl -sL "https://api.github.com/repos/upx/upx/releases" | jq -r 'map(select(.prerelease == false)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://github.com/upx/upx/releases/download/v
             file_name: /upx-$New_PKG_VERSION-src.tar.xz
 
@@ -179,7 +179,7 @@ jobs:
             hash_head: PKG_HASH:=
             version_line: 
             hash_line: 
-            release_api_command: curl -sL "https://api.github.com/repos/UnblockNeteaseMusic/server/releases" | jq -r 'map(select(.prerelease|not)) | first | .tag_name' | sed -e 's/.*v//'
+            release_api_command: curl -sL "https://api.github.com/repos/UnblockNeteaseMusic/server/releases" | jq -r 'map(select(.prerelease == false)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://codeload.github.com/UnblockNeteaseMusic/server/tar.gz/v
             file_name: 
 
