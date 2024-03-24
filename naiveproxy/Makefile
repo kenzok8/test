@@ -5,7 +5,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=naiveproxy
-PKG_VERSION:=122.0.6261.43-2
+PKG_VERSION:=122.0.6261.43-1
 PKG_RELEASE:=1
 
 PKG_SOURCE:=naiveproxy-v$(PKG_VERSION)-openwrt-$(ARCH_PACKAGES).tar.xz
@@ -20,7 +20,7 @@ else ifeq ($(ARCH_PACKAGES),aarch64_generic)
 else ifeq ($(ARCH_PACKAGES),arm_arm1176jzf-s_vfp)
   PKG_HASH:=5403ef027fe947747397c961c08c73f8cf362023a94fb471b3e27e6150b0cd70
 else ifeq ($(ARCH_PACKAGES),arm_arm926ej-s)
-  PKG_HASH:=c115af1a2543028e4ce639aefb89ab74d98de30c9cdd34f50831c1636e19a406
+  PKG_HASH:=c77d632e91f3f5054ec162ab66933d88cb7b1c1df795caa16ab4f2bdcae27390
 else ifeq ($(ARCH_PACKAGES),arm_cortex-a15_neon-vfpv4)
   PKG_HASH:=67a17ce9b4c03915a552004b93b8245b2572b1f783d760c53fb683b46f112ce7
 else ifeq ($(ARCH_PACKAGES),arm_cortex-a5_vfpv4)
