@@ -24,7 +24,7 @@ else ifeq ($(ARCH),arm64)
 else ifeq ($(ARCH),powerp)
   PKG_HASH:=ce58ad536537a8987377392ebd35af17fab5a0943fffbeb499f22b8df323a36b
 else ifeq ($(ARCH),powerpc64le)
-  PKG_HASH:=3295476b37f549a68906519d3eaecb74bf3b6eaf9094cebb16ee84f0151373c6
+  PKG_HASH:=9fcac101e78592db2a3b21baf7db707f736c3576832f1e03c71f482a1ae4d64c
 else
   PKG_HASH:=dummy
 endif
