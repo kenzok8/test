@@ -1,7 +1,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=upx-static
-PKG_VERSION:=4.2.1
+PKG_VERSION:=4.2.2
 PKG_RELEASE:=1
 
 PKG_FILE:=upx-$(PKG_VERSION)-$(PKG_ARCH)_linux.tar.xz
@@ -22,7 +22,7 @@ else ifeq ($(ARCH),arm)
 else ifeq ($(ARCH),arm64)
   PKG_HASH:=3295476b37f549a68906519d3eaecb74bf3b6eaf9094cebb16ee84f0151373c6
 else ifeq ($(ARCH),powerp)
-  PKG_HASH:=3295476b37f549a68906519d3eaecb74bf3b6eaf9094cebb16ee84f0151373c6
+  PKG_HASH:=ce58ad536537a8987377392ebd35af17fab5a0943fffbeb499f22b8df323a36b
 else ifeq ($(ARCH),powerpc64le)
   PKG_HASH:=3295476b37f549a68906519d3eaecb74bf3b6eaf9094cebb16ee84f0151373c6
 else
