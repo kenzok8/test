@@ -8,7 +8,7 @@ PKG_FILE:=upx-$(PKG_VERSION)-$(PKG_ARCH)_linux.tar.xz
 PKG_URL:=https://github.com/upx/upx/releases/download/v$(PKG_VERSION)/
 
 ifeq ($(ARCH),amd64)
-  PKG_HASH:=3295476b37f549a68906519d3eaecb74bf3b6eaf9094cebb16ee84f0151373c6
+  PKG_HASH:=915c8e844f835de03b9cc311ff185aedec79d757aee9d7133a528b9e89c463bb
 else ifeq ($(ARCH),i386)
   PKG_HASH:=2a9a48665ae2d8d9a79765d6f4795e0422a81bd3eb2c7833ee43467d32cce6ad
 else ifeq ($(ARCH),mipsel)
