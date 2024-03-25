@@ -16,7 +16,7 @@ else ifeq ($(ARCH),mipsel)
 else ifeq ($(ARCH),mips)	
   PKG_HASH:=3295476b37f549a68906519d3eaecb74bf3b6eaf9094cebb16ee84f0151373c6
 else ifeq ($(ARCH),armeb)
-  PKG_HASH:=3295476b37f549a68906519d3eaecb74bf3b6eaf9094cebb16ee84f0151373c6
+  PKG_HASH:=72396b07a4d4711d74cb56818343e617e8855f20c7d22d3c46b560cddb99d054
 else ifeq ($(ARCH),arm)	
   PKG_HASH:=3295476b37f549a68906519d3eaecb74bf3b6eaf9094cebb16ee84f0151373c6
 else ifeq ($(ARCH),arm64)
