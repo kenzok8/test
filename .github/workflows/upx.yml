@@ -121,7 +121,7 @@ jobs:
             hash_line: 25
             release_api_command: curl -sL "https://api.github.com/repos/upx/upx/releases" | jq -r 'map(select(.prerelease == false)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://github.com/upx/upx/releases/download/v
-            file_name: /upx-$New_PKG_VERSION-powerp_linux.tar.xz
+            file_name: /upx-$New_PKG_VERSION-powerpc_linux.tar.xz
             
           - pakcages: upx-powerpc64le
             folder: upx-static
