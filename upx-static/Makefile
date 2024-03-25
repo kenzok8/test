@@ -1,7 +1,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=upx-static
-PKG_VERSION:=4.2.1
+PKG_VERSION:=4.2.2
 PKG_RELEASE:=1
 
 PKG_FILE:=upx-$(PKG_VERSION)-$(PKG_ARCH)_linux.tar.xz
@@ -10,7 +10,7 @@ PKG_URL:=https://github.com/upx/upx/releases/download/v$(PKG_VERSION)/
 ifeq ($(ARCH),amd64)
   PKG_HASH:=3295476b37f549a68906519d3eaecb74bf3b6eaf9094cebb16ee84f0151373c6
 else ifeq ($(ARCH),i386)
-  PKG_HASH:=3295476b37f549a68906519d3eaecb74bf3b6eaf9094cebb16ee84f0151373c6
+  PKG_HASH:=2a9a48665ae2d8d9a79765d6f4795e0422a81bd3eb2c7833ee43467d32cce6ad
 else ifeq ($(ARCH),mipsel)
   PKG_HASH:=3295476b37f549a68906519d3eaecb74bf3b6eaf9094cebb16ee84f0151373c6
 else ifeq ($(ARCH),mips)	
