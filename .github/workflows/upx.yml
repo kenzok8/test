@@ -44,7 +44,7 @@ jobs:
         pakcages: [upx-static]
         include:
           - pakcages: upx-amd64
-            folder: upx
+            folder: upx-static
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
             version_line: 
@@ -54,7 +54,7 @@ jobs:
             file_name: /upx-$New_PKG_VERSION-amd64_linux.tar.xz
 
           - pakcages: upx-i386
-            folder: upx
+            folder: upx-static
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
             version_line: 
@@ -64,7 +64,7 @@ jobs:
             file_name: /upx-$New_PKG_VERSION-i386_linux.tar.xz
 
           - pakcages: upx-mipsel
-            folder: upx
+            folder: upx-static
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
             version_line: 
@@ -74,7 +74,7 @@ jobs:
             file_name: /upx-$New_PKG_VERSION-mipsel_linux.tar.xz
 
           - pakcages: upx-mips
-            folder: upx
+            folder: upx-static
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
             version_line: 
@@ -84,7 +84,7 @@ jobs:
             file_name: /upx-$New_PKG_VERSION-mips_linux.tar.xz
 
           - pakcages: upx-armeb
-            folder: upx
+            folder: upx-static
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
             version_line: 
@@ -94,7 +94,7 @@ jobs:
             file_name: /upx-$New_PKG_VERSION-armeb_linux.tar.xz
 
           - pakcages: upx-arm
-            folder: upx
+            folder: upx-static
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
             version_line: 
@@ -104,7 +104,7 @@ jobs:
             file_name: /upx-$New_PKG_VERSION-arm_linux.tar.xz
 
           - pakcages: upx-arm64
-            folder: upx
+            folder: upx-static
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
             version_line: 
@@ -114,7 +114,7 @@ jobs:
             file_name: /upx-$New_PKG_VERSION-arm64_linux.tar.xz
 
           - pakcages: upx-powerpc
-            folder: upx
+            folder: upx-static
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
             version_line: 
@@ -124,7 +124,7 @@ jobs:
             file_name: /upx-$New_PKG_VERSION-powerp_linux.tar.xz
             
           - pakcages: upx-powerpc64le
-            folder: upx
+            folder: upx-static
             version_head: PKG_VERSION:=
             hash_head: \  PKG_HASH:=
             version_line: 
