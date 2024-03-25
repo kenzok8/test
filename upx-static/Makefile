@@ -1,52 +1,45 @@
-# Copyright (C) 2020-2022 Hyy2001X <https://github.com/Hyy2001X>
-
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=upx-static
 PKG_VERSION:=4.2.2
 PKG_RELEASE:=1
 
-ifeq ($(ARCH),x86_64)
-	PKG_ARCH:=amd64
-endif
-ifeq ($(ARCH),i386)
-	PKG_ARCH:=i386
-endif
-ifeq ($(ARCH),mipsel)
-	PKG_ARCH:=mipsel
-endif
-ifeq ($(ARCH),mips)
-	PKG_ARCH:=mips
-endif
-ifeq ($(ARCH),armeb)
-	PKG_ARCH:=armeb
-endif
-ifeq ($(ARCH),arm)
-	PKG_ARCH:=arm
-endif
-ifeq ($(ARCH),arm64)
-	PKG_ARCH:=arm64
-endif
-ifeq ($(ARCH),powerpc)
-	PKG_ARCH:=powerpc
-endif
-ifeq ($(ARCH),powerpc64)
-	PKG_ARCH:=powerpc64le
+PKG_FILE:=upx-$(PKG_VERSION)-$(PKG_ARCH)_linux.tar.xz
+PKG_URL:=https://github.com/upx/upx/releases/download/v$(PKG_VERSION)/
+
+ifeq ($(ARCH),amd64)
+  PKG_HASH:=3295476b37f549a68906519d3eaecb74bf3b6eaf9094cebb16ee84f0151373c6
+else ifeq ($(ARCH),i386)
+  PKG_HASH:=3295476b37f549a68906519d3eaecb74bf3b6eaf9094cebb16ee84f0151373c6
+else ifeq ($(ARCH),mipsel)
+  PKG_HASH:=3295476b37f549a68906519d3eaecb74bf3b6eaf9094cebb16ee84f0151373c6
+else ifeq ($(ARCH),mips)	
+  PKG_HASH:=3295476b37f549a68906519d3eaecb74bf3b6eaf9094cebb16ee84f0151373c6
+else ifeq ($(ARCH),armeb)
+  PKG_HASH:=3295476b37f549a68906519d3eaecb74bf3b6eaf9094cebb16ee84f0151373c6
+else ifeq ($(ARCH),arm)	
+  PKG_HASH:=3295476b37f549a68906519d3eaecb74bf3b6eaf9094cebb16ee84f0151373c6
+else ifeq ($(ARCH),arm64)
+  PKG_HASH:=3295476b37f549a68906519d3eaecb74bf3b6eaf9094cebb16ee84f0151373c6
+else ifeq ($(ARCH),powerp)
+  PKG_HASH:=3295476b37f549a68906519d3eaecb74bf3b6eaf9094cebb16ee84f0151373c6
+else ifeq ($(ARCH),powerpc64le)
+  PKG_HASH:=3295476b37f549a68906519d3eaecb74bf3b6eaf9094cebb16ee84f0151373c6
+else
+  PKG_HASH:=dummy
 endif
 
-PKG_FILE:=upx-$(PKG_VERSION).tar.xz
-PKG_URL:=https://github.com/upx/upx/releases/download/v$(PKG_VERSION)/upx-$(PKG_VERSION)-$(PKG_ARCH)_linux.tar.xz
-PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
-PKG_HASH:=42ee0455eea610ef7ee732aa1f657b34a351ebcfa64a24c1e2a7aaec74c1e038
+PKG_BUILD_DIR:=$(BUILD_DIR)/upx-$(PKG_VERSION)-$(PKG_ARCH)_linux.tar.xz
 
 include $(INCLUDE_DIR)/package.mk
 
 define Package/$(PKG_NAME)
-	SUBMENU:=Compression
+    SUBMENU:=Compression
 	SECTION:=utils
 	CATEGORY:=Utilities
 	TITLE:=UPX - The Ultimate Packer for eXecutables
 	URL:=https://upx.github.io
+	DEPENDS:=@(armeb||arm||i386||mips||mipsel||x86_64) @!(TARGET_x86_geode||TARGET_x86_legacy)
 endef
 
 define Package/$(PKG_NAME)/description
