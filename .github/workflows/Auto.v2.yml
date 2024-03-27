@@ -41,7 +41,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pakcages: [brook, hysteria, ipt2socks, microsocks, shadowsocks-rust, sing-box, trojan, trojan-go, v2raya, v2ray-core, v2ray-plugin, xray-core, xray-plugin, v2ray-geoip, v2ray-geosite]
+        pakcages: [brook,hysteria,ipt2socks,microsocks,sing-box,shadowsocksr-libev,trojan,trojan-go,trojan-plus,v2raya,v2ray-core,v2ray-plugin,xray-core,xray-plugin,v2ray-geoip,v2ray-geosite]
         include:
           - pakcages: brook
             folder: brook
