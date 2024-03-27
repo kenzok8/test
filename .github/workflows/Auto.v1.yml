@@ -41,7 +41,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pakcages: [adguardhome, alist, alist-web, ddns-go, dockerd, filebrowser, gost, mosdns, lua-neturl, lucky, smartdns, upx, UnblockNeteaseMusic]
+        pakcages: [adguardhome,alist,alist-web,ddns-go,dockerd,filebrowser,gost,mosdns,lua-neturl,lucky,smartdns,upx,UnblockNeteaseMusic]
         include:
           - pakcages: adguardhome
             folder: adguardhome

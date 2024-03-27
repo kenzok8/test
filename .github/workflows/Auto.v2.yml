@@ -41,7 +41,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pakcages: [brook,hysteria,ipt2socks,microsocks,sing-box,shadowsocksr-libev,trojan,trojan-go,trojan-plus,v2raya,v2ray-core,v2ray-plugin,xray-core,xray-plugin,v2ray-geoip,v2ray-geosite]
+        pakcages: [brook,hysteria,ipt2socks,microsocks,sing-box,trojan,trojan-go,trojan-plus,v2raya,v2ray-core,v2ray-plugin,xray-core,xray-plugin,v2ray-geoip,v2ray-geosite]
         include:
           - pakcages: brook
             folder: brook
@@ -101,16 +101,6 @@ jobs:
             hash_line:
             release_api_command: curl -sL "https://api.github.com/repos/SagerNet/sing-box/releases" | jq -r 'map(select(.prerelease == false)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://codeload.github.com/SagerNet/sing-box/tar.gz/v
-            file_name:
-
-          - pakcages: shadowsocksr-libev
-            folder: shadowsocksr-libev
-            version_head: PKG_VERSION:=
-            hash_head: PKG_HASH:=
-            version_line:
-            hash_line:
-            release_api_command: curl -sL "https://api.github.com/repos/shadowsocksrr/shadowsocksr-libev/releases" | jq -r 'map(select(.prerelease == false)) | first | .tag_name' | sed -e 's/.*v//'
-            release_download_url: https://codeload.github.com/shadowsocksrr/shadowsocksr-libev/tar.gz/
             file_name:
 
           - pakcages: trojan
