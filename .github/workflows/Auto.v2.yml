@@ -103,6 +103,16 @@ jobs:
             release_download_url: https://codeload.github.com/SagerNet/sing-box/tar.gz/v
             file_name:
 
+          - pakcages: shadowsocksr-libev
+            folder: shadowsocksr-libev
+            version_head: PKG_VERSION:=
+            hash_head: PKG_HASH:=
+            version_line:
+            hash_line:
+            release_api_command: curl -sL "https://api.github.com/repos/shadowsocksrr/shadowsocksr-libev/releases" | jq -r 'map(select(.prerelease == false)) | first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://codeload.github.com/shadowsocksrr/shadowsocksr-libev/tar.gz/
+            file_name:
+
           - pakcages: trojan
             folder: trojan
             version_head: PKG_VERSION:=
@@ -122,6 +132,16 @@ jobs:
             release_api_command: curl -sL "https://api.github.com/repos/p4gefau1t/trojan-go/releases" | jq -r 'map(select(.prerelease == false)) | first | .tag_name' | sed -e 's/.*v//'
             release_download_url: https://codeload.github.com/p4gefau1t/trojan-go/tar.gz/v
             file_name:
+
+          - pakcages: trojan-plus
+            folder: trojan-plus
+            version_head: PKG_VERSION:=
+            hash_head: PKG_HASH:=
+            version_line:
+            hash_line:
+            release_api_command: curl -sL "https://api.github.com/repos/peter-tank/trojan-plus/releases" | jq -r 'map(select(.prerelease == false)) | first | .tag_name' | sed -e 's/.*v//'
+            release_download_url: https://codeload.github.com/peter-tank/trojan-plus/tar.gz/v
+            file_name:              
 
           - pakcages: v2raya
             folder: v2raya
